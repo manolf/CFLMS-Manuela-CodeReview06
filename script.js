@@ -23,9 +23,7 @@ var Lugar = /** @class */ (function () {
         travelArray.push(this);
     }
     Lugar.prototype.display = function () {
-        return " \n\n        <div class=\"col-xl-3 col-lg-6 col-xs-12 col-md-6 mr-2 ml-2 mt-2 mb-2 bg-secondary\">\n        <div class=\"card\" style=\"width: 18rem;\">\n        <div class=\"card-body\">\n            <h5 class=\"card-title text-center\">" + this.name + "</h5>\n            <p class=\"card-text text-center\">" + this.address + " <br> " + this.zipcode + " " + this.city + " </p>\n              <img src=\"" + this.image + "\" class=\"card-img-top\" class=\"foto\" alt=\"" + this.name + "\">\n          </div></div></div>\n        ";
-        // return `${this.name} <br>  ${this.address} <br> ${this.zipcode} ${this.city}  
-        // <br> <img class ="foto" src="${this.image}" alt="${this.name}">` ;
+        return " \n\n        <div class=\"col-xl-3 col-lg-3 col-md-6 col-xs-12 mt-1 mb-1\">\n        <div class=\"card bg-secondary\" style=\"width: 16rem;\">\n        <div class=\"card-body\">\n            <h5 class=\"card-title text-center\">" + this.name + "</h5>\n            <p class=\"card-text text-center\">" + this.address + " <br> " + this.zipcode + " " + this.city + " </p>\n              <img src=\"" + this.image + "\" class=\"card-img-top d-none d-sm-block\" alt=\"" + this.name + "\">\n          </div></div></div>\n        ";
     };
     return Lugar;
 }());
@@ -38,72 +36,89 @@ var Restaurant = /** @class */ (function (_super) {
         return _this;
     }
     Restaurant.prototype.displayRestaurant = function () {
-        return " \n\n        <div class=\"col-xl-3 col-lg-6 col-xs-12 col-md-6 mr-2 ml-2 mt-2 mb-2 bg-primary\">\n        <div class=\"card\" style=\"width: 18rem;\">\n        <div class=\"card-body\">\n            <h5 class=\"card-title text-center\">" + this.name + "</h5>\n            <p class=\"card-text text-center\">" + this.address + " <br> " + this.zipcode + " " + this.city + "\n            <!-- <br>  " + this.type + " <br> " + this.web + " -->\n            </p>\n            \n              <img src=\"" + this.image + "\" class=\"card-img-top\" class=\"foto\" alt=\"" + this.name + "\">\n              <ul class=\"list-group list-group-flush\">\n            <li class=\"list-group-item text-center\"> " + this.type + "</li>\n            <li class=\"list-group-item text-center\"> " + this.web + "</li>\n          </ul>\n           \n              \n          </div></div></div>\n        ";
-        //  return `${super.display()} <br>  ${this.type} <br> ${this.web} ` 
+        return " \n\n        <div class=\"col-xl-3 col-lg-3 col-md-6 col-xs-12 mt-1 mb-1\">\n        <div class=\"card bg-secondary\" style=\"width: 16rem;\">\n        <div class=\"card-body\">\n            <h5 class=\"card-title text-center\">" + this.name + "</h5>\n            <p class=\"card-text text-center\">" + this.address + " <br> " + this.zipcode + " " + this.city + "\n            <!-- <br>  " + this.type + " <br> " + this.web + " -->\n            </p>\n            \n              <img src=\"" + this.image + "\" class=\"card-img-top d-none d-sm-block\" alt=\"" + this.name + "\">\n              <ul class=\"list-group list-group-flush\">\n            <li class=\"list-group-item text-center bg-secondary\"> " + this.type + "</li>\n            <li class=\"list-group-item text-center bg-secondary\"> " + this.web + "</li>\n          </ul>\n           \n              \n          </div></div></div>\n        ";
     };
     return Restaurant;
 }(Lugar));
 var Events = /** @class */ (function (_super) {
     __extends(Events, _super);
-    function Events(a, b, c, d, e, date, time) {
+    function Events(a, b, c, d, e, date, time, price) {
         var _this = _super.call(this, a, b, c, d, e) || this;
         _this.date = date;
         _this.time = time;
+        _this.price = price;
         return _this;
     }
     Events.prototype.displayEvent = function () {
-        return "\n        <div class=\"col-xl-3 col-lg-6 col-xs-12 col-md-6 mr-2 ml-2 mt-2 mb-2 bg-warning \">\n        <div class=\"card\" style=\"width: 18rem;\">\n        <div class=\"card-body\">\n            <h5 class=\"card-title text-center\">" + this.name + "</h5>\n            <p class=\"card-text text-center\">" + this.address + " <br> " + this.zipcode + " " + this.city + "\n            <!--<br>  " + this.date + " <br> " + this.time + " -->\n            </p>\n              <img src=\"" + this.image + "\" class=\"card-img-top text-center\" class=\"foto\" alt=\"" + this.name + "\">\n              <ul class=\"list-group list-group-flush\">\n              <li class=\"list-group-item text-center\"> " + this.date + "</li>\n              <li class=\"list-group-item text-center\"> " + this.time + "</li>\n            </ul>\n\n              \n          </div></div></div>\n        ";
-        //  return `${super.display()} <br>  ${this.date} <br> ${this.time} ` 
+        return "\n        <div class=\"col-xl-3 col-lg-3 col-md-6 col-xs-12 mt-1 mb-1 \">\n        <div class=\"card bg-secondary\" style=\"width: 16rem;\">\n        <div class=\"card-body \">\n            <h5 class=\"card-title text-center\">" + this.name + "</h5>\n            <p class=\"card-text text-center\">" + this.address + " <br> " + this.zipcode + " " + this.city + "\n            <br>  " + this.date + ", " + this.time + "\n            </p>\n              <img src=\"" + this.image + "\" class=\"card-img-top text-center d-none d-sm-block\" alt=\"" + this.name + "\">\n              <p class=\"card-text\"> </p>\n\n              <ul class=\"list-group list-group-flush\">\n              <li class=\"list-group-item text-center bg-secondary\"> " + this.price + "</li>\n            </ul>\n\n              \n          </div></div></div>\n        ";
     };
     return Events;
 }(Lugar));
+//building some instances
 var lugar1 = new Lugar("Brandenburger Tor", "Pariser Platz 5", 10117, "Berlin", "img/berlin.jpg");
 var travel2 = new Restaurant("Glonojad", "Plac Matejiki 2", 31157, "Krakow", "img/krakau.jpg", "Vegetarian", "www.glonojad.com");
-var travel3 = new Events("Krampuslauf", "Kirchenstraße 1", 9560, "St.Nikolai", "img/perchtenlauf.jpg", "5.12.2020", "20:00");
-var travel4 = new Lugar("DomRep", "Bavaro Beach", 23000, "Punta Cana", "img/domrep.jpg");
-var travel5 = new Restaurant("That's Amore", "Messenhausergasse 13", 1030, "Vienna", "img/pizza.jpg", "Italian", "www.thatsamore.at");
-var travel6 = new Events("Joan Jett @ Count Basie Center", "99 Monmouth Street", 07701, "New Jersey", "img/jett.jpg", "10.9.2020", "20:00");
-// document.getElementById("travel1").innerHTML = lugar1.display();
-// document.getElementById("travel4").innerHTML = travel4.display();
-// document.getElementById("travel2").innerHTML = travel2.displayRestaurant();
-// document.getElementById("travel5").innerHTML = travel5.displayRestaurant();
-// document.getElementById("travel3").innerHTML = travel3.displayEvent();
-// document.getElementById("travel6").innerHTML = travel6.displayEvent();
+var travel3 = new Events("Krampuslauf", "Kirchenstraße 1", 9560, "St.Nikolai", "img/perchtenlauf.jpg", "5.12.2020", "20:00", "15 €");
+var travel4 = new Lugar("Table Mountain", "South Africa", 7103, "Capetown", "img/tablemountain.jpg");
+var travel5 = new Restaurant("Bierbaron", "Heinrichstraße 56", 8010, "Graz", "img/bierbaron.jpg", "Beersuporting food", "www.diebausatzlokale.at");
+var travel6 = new Events("Joan Jett @ Count Basie Center", "99 Monmouth Street", 07701, "New Jersey", "img/jett.jpg", "10.9.2020", "20:00", "110 $");
+var travel7 = new Lugar("Bavaro Beach", "Dominican Republic", 23000, "Punta Cana", "img/domrep.jpg");
+var travel8 = new Restaurant("That's Amore", "Messenhausergasse 13", 1030, "Vienna", "img/pizza.jpg", "Italian", "www.thatsamore.at");
+var travel9 = new Events("Kontrast @ WUK", "Währinger Straße 59", 1030, "Wien", "img/kontrust.jpg", "2.11.2020", "21:00", "45 €");
 var output = document.getElementById("travel");
-//output.innerHTML += (travel4.display());
-//console.log( instanceof travel5);
-// console.table(travelArray);
-// console.log("CHECK OB INSTANCE:");
-// console.log(lugar1.constructor.name)
-// console.log(travel2.constructor.name)
-// console.log(lugar1.constructor.name);
-// console.log("CHECK 1");
-//console.log(travelArray[1].constructor);
+//building the output 
 for (var i = 0; i < travelArray.length; i++) {
-    //START Output Schleife
-    console.log("ganz zum anfang und 6mal");
-    output.innerHTML += "\n";
     switch (travelArray[i].constructor.name) {
         case "Lugar":
-            //console.log("START");
             output.innerHTML += travelArray[i].display();
             break;
         case "Restaurant":
             output.innerHTML += travelArray[i].displayRestaurant();
-            console.log("show2 function");
             break;
         case "Events":
             output.innerHTML += travelArray[i].displayEvent();
-            console.log("show3 function");
             break;
         default:
-            console.log("nix von alledem", +travelArray[i].constructor.name);
     }
-    //  console.log(travelArray[i].constructor.name)
-    //console.log(travelArray[i].name + "type:" + travelArray[i].type + "date" + travelArray[i].date);
-    //console.log(travelArray[i]).display();
 }
-// for (let i=0; i < travelArray.length; i++){
-//     console.log("hurra");
-// console.log(travelArray[i]);
-// }
+//adding dateStamps to the objects
+travelArray[0]["dateStamp"] = new Date("Mar 11 2012 10:00:00 AM");
+travelArray[1]["dateStamp"] = new Date("Mar 11 2012 12:00:00 AM");
+travelArray[2]["dateStamp"] = new Date("Mar 11 2019 10:00:00 AM");
+travelArray[3]["dateStamp"] = new Date("Dec 11 2019 07:00:07 AM");
+travelArray[4]["dateStamp"] = new Date("Aug 11 2019 07:00:07 PM");
+travelArray[5]["dateStamp"] = new Date("May 11 2019 03:30:21 PM");
+travelArray[6]["dateStamp"] = new Date("Sep 14 2017 06:30:11 PM");
+travelArray[7]["dateStamp"] = new Date("Jul 14 2015 04:22:11 PM");
+travelArray[8]["dateStamp"] = new Date("Jan 14 2013 08:22:11 PM");
+//local storage of the object array
+// localStorage.setItem("TravelArray",travelArray);
+//to call this item (for new js-file)
+// document.getElementById("#").innerHTML = localStorage.getItem("TravelArray");
+//dynamic sorting function 
+function compareValues(key, order) {
+    if (order === void 0) { order = 'asc'; }
+    return function innerSort(a, b) {
+        if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
+            // property doesn't exist on either object
+            return 0;
+        }
+        var varA = (typeof a[key] === 'string')
+            ? a[key].toUpperCase() : a[key];
+        var varB = (typeof b[key] === 'string')
+            ? b[key].toUpperCase() : b[key];
+        var comparison = 0;
+        if (varA > varB) {
+            comparison = 1;
+        }
+        else if (varA < varB) {
+            comparison = -1;
+        }
+        return ((order === 'desc') ? (comparison * -1) : comparison);
+    };
+}
+//sorting by dateStamp
+console.log("ordered by datestamp");
+console.table(travelArray.sort(compareValues('dateStamp')));
+//sorting by dateStamp descending
+console.log("ordered by datestamp descending");
+console.table(travelArray.sort(compareValues('dateStamp', 'desc')));
