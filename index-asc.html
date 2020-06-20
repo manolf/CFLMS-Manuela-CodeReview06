@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="/css/bootstrap-4.5.0-dist/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
-    <link rel="stylesheet" href="/css/style.css">
+    <script src="./js/script_asc.js"></script>
+    <link href="./css/bootstrap-4.5.0-dist/" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity ="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" >
 </head>
 <body class= "bg-secondary">
 
-    <h1>Ordered by DateStamp ascending</h1>
+    
+    <div class="jumbotron jumbotron-fluid bg-dark text-light">
+        <div class="container">
+          <h1 class="display-4">Travel-o-matic</h1>
+          <p class="lead">Fotos ordered ascending by Datestamp</p>
+        </div>
+      </div>
+
 
     <div class="container">
         <div class= "row" id ="output_asc">  
@@ -17,17 +25,22 @@
         </div>
     </div>
 
+    <div class="container">
+        <div class= "row" id ="output_asc2">  
+          <p>TEST HTML</p>
+          
+
+        </div>
+    </div>
+
     <footer class="page-footer bg-dark">
         <div class="footer-copyright text-center py-3"> 
-          <a href="index-asc.html" class="bg-dark"> order_asc</a>
-          <a href="index.html" class="bg-dark"> home</a>  
-          <a href="index-desc.html" class="bg-dark"> order_desc</a>
+          <a href="index-asc.html" class="badge badge-secondary">Order Fotos Ascending</a>
+          <a href="index.html" class="badge badge-secondary">home </a>
+          <a href="index-desc.html" class="badge badge-secondary">Order Fotos Descending</a>
+          <p class="text-light">Manuela @ CodeFactory 2020</p>
         </div>
-        <div class="footer-copyright text-center py-3"> 
-          Manuela @ CodeFactory 2020
-        </div>
-      </footer>
 
-    <script src="/js/script_asc.js"></script>
+    <script src="js/script_asc.js"></script>
 </body>
 </html>

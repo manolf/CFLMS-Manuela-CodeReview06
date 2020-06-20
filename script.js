@@ -90,10 +90,6 @@ travelArray[5]["dateStamp"] = new Date("May 11 2019 03:30:21 PM");
 travelArray[6]["dateStamp"] = new Date("Sep 14 2017 06:30:11 PM");
 travelArray[7]["dateStamp"] = new Date("Jul 14 2015 04:22:11 PM");
 travelArray[8]["dateStamp"] = new Date("Jan 14 2013 08:22:11 PM");
-//local storage of the object array
-// localStorage.setItem("TravelArray",travelArray);
-//to call this item (for new js-file)
-// document.getElementById("#").innerHTML = localStorage.getItem("TravelArray");
 //dynamic sorting function 
 function compareValues(key, order) {
     if (order === void 0) { order = 'asc'; }
@@ -116,9 +112,21 @@ function compareValues(key, order) {
         return ((order === 'desc') ? (comparison * -1) : comparison);
     };
 }
-//sorting by dateStamp
 console.log("ordered by datestamp");
-console.table(travelArray.sort(compareValues('dateStamp')));
+var arrayAsc = travelArray.sort(compareValues('dateStamp'));
+console.table(arrayAsc);
+//sorting by dateStamp
 //sorting by dateStamp descending
 console.log("ordered by datestamp descending");
-console.table(travelArray.sort(compareValues('dateStamp', 'desc')));
+var arrayDesc = travelArray.sort(compareValues('dateStamp', 'desc'));
+console.table(arrayDesc);
+//local storage of the object array
+// localStorage.setItem("TravelArray",travelArray);
+//to call this item (for new js-file)
+// document.getElementById("#").innerHTML = localStorage.getItem("TravelArray");
+//serialize it to String for Local Storage
+var arrayAsc_serialized = JSON.stringify(arrayAsc);
+localStorage.setItem("arrayAsc", arrayAsc_serialized);
+var arrayDesc_serialized = JSON.stringify(arrayDesc);
+localStorage.setItem("arrayDesc", arrayDesc_serialized);
+console.table(localStorage);
